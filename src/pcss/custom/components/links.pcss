@@ -1,0 +1,48 @@
+/**
+* Links
+*/
+
+@layer components {
+    /* Base styles for all links - no colours */
+    .link {
+        @apply underline hover:no-underline motion-safe:transition-colors;
+
+        &:active,
+        &:focus-visible {
+            @apply outline outline-2 outline-green-500 rounded;
+        }
+    }
+
+    .link-alt {
+        @apply link no-underline hover:underline;
+    }
+
+    .link-pink {
+        @apply text-pink-700;
+    }
+
+    .link-blue {
+        @apply text-blue-100;
+    }
+
+    .link-focus {
+        &:focus,
+        &:focus-visible {
+            @apply outline outline-2 outline-green-500 rounded;
+        }
+    }
+
+    .inner-pink-link {
+        a {
+            @apply link text-pink-700;
+        }
+    }
+}
+
+
+/* Block link */
+.block-link {
+    &::after {
+        @apply absolute inset-0 block content-[''];
+    }
+}

@@ -1,0 +1,125 @@
+/*
+    Buttons
+*/
+@layer components {
+    /* Base styles for all buttons - no colours */
+    .btn {
+        @apply appearance-none border-2 border-transparent cursor-pointer font-medium inline-block outline outline-2 outline-transparent pb-2.5 pt-3 px-6 rounded-full text-slight text-center whitespace-nowrap md:text-base active:outline-green-500 active:border-transparent focus-visible:rounded-full focus-visible:outline-green-500 focus-visible:border-white motion-safe:transition motion-safe:duration-200 motion-safe:ease-in-out;
+
+        &:focus-visible:not(.disabled):not([disabled]) {
+            @apply outline-green-500;
+        }
+
+        &[disabled],
+        &.disabled {
+            @apply cursor-not-allowed pointer-events-none outline-transparent opacity-50;
+        }
+
+        /* Standard / solid */
+        &-pink {
+            @apply bg-pink-700 text-white hover:bg-pink-800 active:bg-pink-800;
+
+            &:focus-visible:not(.disabled):not([disabled]) {
+                @apply bg-pink-800;
+            }
+        }
+
+        &-dark {
+            @apply bg-blue-800 text-white hover:bg-blue-1000 active:bg-blue-1000;
+
+            &:focus-visible:not(.disabled):not([disabled]) {
+                @apply bg-blue-1000;
+            }
+        }
+
+        &-white {
+            @apply bg-white text-blue-800 hover:bg-pink-200 active:bg-pink-200;
+
+            &:focus-visible:not(.disabled):not([disabled]) {
+                @apply bg-pink-200;
+            }
+        }
+
+        /* Standard / outline */
+        &-outline{
+            &-pink {
+                @apply bg-transparent border-pink-700 text-pink-700 hover:border-pink-700 hover:outline-pink-700 hover:outline-2 active:border-pink-700 active:outline-4;
+
+                &:focus-visible:not(.disabled):not([disabled]) {
+                    @apply border-pink-700 outline-4;
+                }
+            }
+            &-dark {
+                @apply bg-transparent border-blue-800 text-blue-800 hover:border-blue-800 hover:outline-blue-800 hover:outline-2 active:border-blue-800 active:outline-4;
+
+                &:focus-visible:not(.disabled):not([disabled]) {
+                    @apply border-blue-800 outline-4;
+                }
+            }
+
+            &-white {
+                @apply bg-transparent border-white text-white hover:border-white hover:outline-white hover:outline-2 active:border-white active:outline-4;
+
+                &:focus-visible:not(.disabled):not([disabled]) {
+                    @apply border-white outline-4;
+                }
+            }
+        }
+        &-icon {
+            @apply rounded active:border-white active:outline-4;
+
+            &:focus-visible:not(.disabled):not([disabled]) {
+                @apply outline outline-2 outline-offset-2 outline-green-500;
+            }
+        }
+
+        /* Small / solid */
+        &-small {
+            &-pink {
+                @apply btn-pink btn-small;
+            }
+            &-dark {
+                @apply btn-dark btn-small;
+            }
+            &-white {
+                @apply btn-white btn-small;
+            }
+
+            /* Small / outline */
+            &-outline {
+                &-pink {
+                    @apply btn-outline-pink btn-small;
+                }
+                &-dark {
+                    @apply btn-outline-dark btn-small;
+                }
+                &-white {
+                    @apply btn-outline-white btn-small;
+                }
+            }
+        }
+
+        /* Icon */
+        &-icon {
+            @apply border-2 border-white outline-2 outline-offset-2 outline-transparent hover:outline-pink-700 active:outline-green-500 active:outline-2;
+        }
+
+        /* Size */
+        &-full {
+            @apply flex justify-center w-full;
+
+            & > div {
+                @apply justify-center;
+            }
+        }
+        &-wide {
+            @apply px-14;
+        }
+        &-small {
+            @apply px-5 py-3 text-slight;
+        }
+        &-thin {
+            @apply py-2;
+        }
+    }
+}

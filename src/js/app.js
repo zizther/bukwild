@@ -1,0 +1,17 @@
+/* CSS */
+import "@js/parts/css";
+
+/**
+ * Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
+ */
+if (import.meta.hot) {
+    import.meta.hot.accept(() => {
+        console.log('HMR');
+    });
+}
+
+window.APP =
+    window.APP ||
+    new (function APP() {
+
+    })();

@@ -1,0 +1,75 @@
+.message {
+    @apply mx-auto max-w-4xl p-4 rounded-lg md:rounded-xl;
+
+    &-heading {
+        @apply font-medium mb-2 text-sm;
+    }
+    &-text {
+        @apply text-sm;
+    }
+
+    &-info {
+        @apply bg-blue-50;
+
+        svg {
+            @apply text-blue-800;
+        }
+
+        .message {
+            &-heading {
+                @apply text-blue-800;
+            }
+            &-text {
+                @apply text-blue-700;
+            }
+        }
+    }
+    &-warning {
+        @apply bg-yellow-50;
+
+        svg {
+            @apply text-yellow-800;
+        }
+
+        .message {
+            &-heading {
+                @apply text-yellow-800;
+            }
+            &-text {
+                @apply text-yellow-700;
+            }
+        }
+    }
+    &-error {
+        @apply bg-red-50;
+
+        svg {
+            @apply text-red-800;
+        }
+
+        .message {
+            &-heading {
+                @apply text-red-800;
+            }
+            &-text {
+                @apply text-red-700;
+            }
+        }
+    }
+    &-success {
+        @apply bg-green-50;
+
+        svg {
+            @apply text-green-800;
+        }
+
+        .message {
+            &-heading {
+                @apply text-green-800;
+            }
+            &-text {
+                @apply text-green-700;
+            }
+        }
+    }
+}

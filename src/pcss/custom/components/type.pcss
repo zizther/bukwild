@@ -1,0 +1,100 @@
+.h {
+    &1 {
+        @apply font-bold leading-tighter text-3xl md:text-5xl;
+    }
+    &2 {
+        @apply font-bold leading-tighter text-2.5xl md:text-4xl;
+    }
+    &3 {
+        @apply font-bold leading-tighter text-xl md:text-2.5xl;
+    }
+    &4 {
+        @apply font-bold text-lg md:text-xl;
+    }
+    &5 {
+        @apply font-bold text-base md:text-lg;
+    }
+    &6 {
+        @apply font-medium md:text-base;
+    }
+}
+
+.display {
+    &1 {
+        @apply leading-none font-semibold text-3xl md:text-5xl;
+        word-spacing: 0.2rem;
+        /* font-normal font-changa */
+    }
+}
+
+.type {
+    :first-child {
+        @apply mt-0;
+    }
+
+    p {
+        @apply mt-4;
+    }
+
+    ul {
+        @apply mt-4;
+
+        & > li {
+            @apply pl-5 relative;
+
+            &::before {
+                @apply absolute left-0 top-[11px] bg-current block content-[''] h-1.5 w-1.5;
+                background-size: 6px 6px;
+                clip-path: circle(50% at 50% 50%);
+            }
+        }
+    }
+
+    h2 {
+        @apply h2 mb-5 mt-5 heading-theme;
+    }
+    h3 {
+        @apply h3 mb-5 mt-5 heading-theme;
+    }
+
+    ol {
+        @apply list-decimal pl-5 mt-4;
+
+        li {
+            @apply mt-3 relative;
+
+            ol {
+                @apply list-[lower-alpha];
+            }
+        }
+    }
+
+    blockquote {
+        @apply border-l mt-4 pl-6;
+    }
+
+    a {
+        @apply link inline-block;
+    }
+
+    /* Add external link icon to redactor link when new window selected */
+    /*
+    a[target="_blank"] {
+        @apply link relative pr-1;
+
+        &::after {
+            @apply bg-btn-external bg-no-repeat bg-contain content-[''] inline-block ml-1 relative top-0.5 h-3 w-3;
+        }
+    }
+    */
+
+    &-p {
+        @apply text-slight md:text-base;
+    }
+    &-lg {
+        @apply text-base md:text-lg;
+    }
+    &-sm {
+        @apply text-slight;
+    }
+}

@@ -1,0 +1,126 @@
+@layer components {
+    .theme-white {
+        --bg: theme('colors.white');
+        --text: theme('colors.gray.900');
+        --heading: theme('colors.pink.700');
+        --border: theme('colors.gray.800');
+        --filter: theme('colors.pink.700');
+        --slider-pagination: theme('colors.white');
+
+        .btn-theme {
+            @apply btn-pink;
+        }
+        .btn-secondary-theme {
+            @apply btn-dark;
+        }
+        .btn-outline-theme {
+            @apply btn-outline-pink;
+        }
+        .link-theme {
+            @apply link-pink;
+        }
+        .type {
+            a {
+                @apply link-pink;
+            }
+        }
+    }
+    .theme-light {
+        --bg: theme('colors.blue.100');
+        --text: theme('colors.gray.900');
+        --heading: theme('colors.pink.700');
+        --border: theme('colors.gray.800');
+        --filter: theme('colors.pink.700');
+        --slider-pagination: theme('colors.blue.700');
+
+        .btn-theme {
+            @apply btn-pink;
+        }
+        .btn-secondary-theme {
+            @apply btn-dark;
+        }
+        .btn-outline-theme {
+            @apply btn-outline-pink;
+        }
+        .link-theme {
+            @apply link-pink;
+        }
+        .type {
+            a {
+                @apply link-pink;
+            }
+        }
+    }
+    .theme-dark {
+        --bg: theme('colors.blue.800');
+        --text: theme('colors.blue.100');
+        --heading: theme('colors.white');
+        --border: theme('colors.gray.200');
+        --filter: theme('colors.pink.700');
+        --slider-pagination: theme('colors.white');
+
+        .btn-theme {
+            @apply btn-white;
+        }
+        .btn-secondary-theme {
+            @apply btn-outline-white;
+        }
+        .btn-outline-theme {
+            @apply btn-outline-white;
+        }
+        .link-theme {
+            @apply link-pink;
+        }
+        .type {
+            a {
+                @apply link-pink;
+            }
+        }
+    }
+    .theme-pink {
+        .btn-theme {
+            @apply btn-white;
+        }
+        .btn-secondary-theme {
+            @apply btn-dark;
+        }
+        .btn-outline-theme {
+            @apply btn-outline-white;
+        }
+        .link-theme {
+            @apply link-blue;
+        }
+        .type {
+            a {
+                @apply link-blue;
+            }
+        }
+    }
+}
+
+.theme-pink {
+    --bg: theme('colors.pink.700');
+    --text: theme('colors.blue.100');
+    --heading: theme('colors.white');
+    --border: theme('colors.gray.200');
+    --filter: theme('colors.blue.800');
+    --slider-pagination: theme('colors.white');
+}
+
+@layer utilities {
+    .bg-theme {
+        @apply bg-[var(--bg)];
+    }
+    .heading-theme {
+        @apply text-[var(--heading)];
+    }
+    .text-theme {
+        @apply text-[var(--text)];
+    }
+    .border-theme {
+        @apply border-[var(--border)];
+    }
+    .filter-theme {
+        @apply bg-[var(--filter)];
+    }
+}

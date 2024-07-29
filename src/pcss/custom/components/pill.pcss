@@ -1,0 +1,37 @@
+.pill {
+    @apply bg-gray-200 font-medium inline-flex leading-tight rounded-full py-1.5 px-4 text-gray-600 text-xs;
+
+    &:is(a, button, .link) {
+        @apply cursor-pointer transition hover:bg-gray-300 focus:outline-2 focus:outline-green-400;
+    }
+
+    /* Colours */
+    &-white {
+        @apply bg-white text-black;
+
+        &:is(a, button, .link) {
+            @apply hover:bg-white;
+        }
+    }
+    &-black {
+        @apply bg-black text-white;
+
+        &:is(a, button, .link) {
+            @apply hover:bg-black/80;
+        }
+    }
+    &-yellow {
+        @apply bg-yellow-400 text-gray-800;
+
+        &:is(a, button, .link) {
+            @apply hover:bg-yellow-500;
+        }
+    }
+    &-black-border {
+        @apply bg-transparent border border-black text-black;
+
+        &:is(a, button, .link) {
+            @apply bg-transparent border border-black text-black;
+        }
+    }
+}

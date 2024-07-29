@@ -1,0 +1,117 @@
+.form {
+    accent-color: theme(colors.pink.700);
+
+    &-group {
+        @apply mb-5;
+    }
+
+    &-squash {
+        .form {
+            &-group {
+                @apply mb-3;
+            }
+        }
+    }
+
+    label,
+    legend {
+        @apply block font-medium mb-1 text-theme text-slight md:text-base;
+
+        &.required {
+            &::after {
+                @apply content-['*'] ml-1 font-semibold text-pink-700;
+            }
+        }
+    }
+
+    input,
+    select,
+    textarea {
+        @apply border border-gray-400 block px-3 py-2 relative rounded shadow-[0_0_0_0] shadow-gray-600 text-gray-500 w-full md:px-4 md:py-3 motion-safe:transition;
+
+        &:hover:not(:disabled):not(:read-only) {
+            @apply border-transparent shadow-[0_0_0_2px];
+        }
+
+        &:focus-visible:not(:disabled) {
+            @apply border-transparent shadow-[0_0_0_2px] outline outline-2 outline-offset-2 outline-green-500;
+        }
+
+        &[type="text"] {
+            @apply appearance-none;
+        }
+    }
+    input,
+    textarea {
+        @apply font-sans;
+
+        &:disabled,
+        &:read-only {
+            @apply bg-gray-200 cursor-not-allowed text-gray-500;
+
+            &::placeholder {
+                @apply text-gray-500;
+            }
+
+            &:focus-visible:active {
+                @apply outline-none shadow-gray-500;
+            }
+        }
+    }
+
+    select {
+        @apply appearance-none bg-white bg-no-repeat cursor-pointer;
+        print-color-adjust: exact;
+
+        &:hover:not(:disabled) {
+            @apply border-transparent shadow-gray-600 shadow-[0_0_0_2px];
+        }
+
+        &:not([multiple]):not([size]) {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.199' height='7.59' %3E%3Cpath fill='%23C93562' stroke='%23C93562' stroke-width='.75' d='M5.25 7.069.586 2.405a.533.533 0 0 1-.058-.714.518.518 0 0 1 .772-.035l3.95 3.95a.487.487 0 0 0 .68 0l3.95-3.95a.521.521 0 0 1 .737.737L5.94 7.069a.48.48 0 0 1-.691 0Z'/%3E%3C/svg%3E");
+            background-size: 1rem 0.65rem;
+            background-position: right 1.25rem center;
+            padding-right: 3rem;
+
+            &:not([multiple]):not([size]):active {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.199' height='7.59'  transform='rotate(180)'%3E%3Cpath fill='%23C93562' stroke='%23C93562' stroke-width='.75' d='M5.25 7.069.586 2.405a.533.533 0 0 1-.058-.714.518.518 0 0 1 .772-.035l3.95 3.95a.487.487 0 0 0 .68 0l3.95-3.95a.521.521 0 0 1 .737.737L5.94 7.069a.48.48 0 0 1-.691 0Z'/%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    textarea {
+        @apply min-h-[150px];
+    }
+
+    &-checkbox,
+    &-radio {
+        a {
+            @apply text-pink-700 underline hover:no-underline;
+        }
+    }
+
+    .errors {
+        @apply mt-3 type-sm text-pink-700;
+    }
+}
+
+/**
+ * Formie styles
+ */
+[data-formie] {
+    hr {
+        @apply my-4;
+    }
+
+    /*
+        Formie conditionally hidden fields
+    */
+    .form-row:has(> [data-conditionally-hidden="true"]) {
+        @apply hidden;
+    }
+
+    /* Formie summary block */
+    [data-summary-blocks] {
+        @apply space-y-4;
+    }
+}
